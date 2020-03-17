@@ -16,6 +16,8 @@
     "markdown-to-jsx": "^6.11.0",
     "next": "^9.3.0",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "react-iframe": "^1.8.0",
+    "react-view-component": "^1.0.1"
   }
 }

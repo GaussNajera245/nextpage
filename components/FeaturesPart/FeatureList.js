@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 
 const FeatureList = props => {
     return ( 
-        <Grid container direction="row" justify="space-around" spacing={2}>
+        <Grid container direction="row" justify="space-around" spacing={2} style={{width:'calc(100% - 16px)'}}>
             {props.features.map( e => (
             <Grid item xs={10} sm={5} style={{marginBottom: 10}} key={e.title}>
                 <Card style={{minWidth: 275}}>

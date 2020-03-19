@@ -6,6 +6,9 @@
 # testing
 /coverage
 
+/.firebase/
+public
+
 # next.js
 /.next/
 /out/

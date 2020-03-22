@@ -1,6 +1,6 @@
 import React from 'react';
 
-const About = props => {
+const About:React.FC = () => {
     return (
         <h1>HAY QUE ESTUDIAR DESDE CASA</h1>
     )

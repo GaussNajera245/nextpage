@@ -1,18 +1,29 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import Grid from '@material-ui/core/Grid';
 import Iframe from 'react-iframe'
 
-const Form = props => {
+const styles:CSSProperties = {
+    border: "none",
+    height: "535px",
+};
+
+const Form: React.FC = () => {
   return (
     <Grid container style={{minWidth:450, paddingBottom:10, paddingTop:20, backgroundColor: '#d3eaf5'}} direction="row" justify="center">
       <Grid item xs={11} >
+        <iframe 
+            src="https://docs.google.com/forms/d/1dbRjBU4-i-8CvfEG593pTMwqEp29BdH7VWmvPVUoH4c/viewform?edit_requested=true" 
+            style={styles}
+            scrolling="no"
+        ></iframe>
+      
         <Iframe url="https://docs.google.com/forms/d/1dbRjBU4-i-8CvfEG593pTMwqEp29BdH7VWmvPVUoH4c/viewform?edit_requested=true"
             width="100%"
             height="535px"
             className="myClassname"
             // display="initial"
             // position="relative"
-            frameBorder="0" 
+            // frameBorder="0" 
             scrolling="no"
             />
       </Grid>

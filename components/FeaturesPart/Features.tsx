@@ -1,10 +1,11 @@
 import React from 'react';
 import FeatureList from './FeatureList';
 import {Grid, Typography} from '@material-ui/core';
+import { FeatureListProps } from '../../models/types.models'
 
-const Features = props => {
+const Features: React.FC<FeatureListProps> = props => {
     return(
-        <Grid container direction="column" justify="center" align="center" style={{marginTop:35, marginBottom:35}}>
+        <Grid container direction="column" alignItems="center" style={{marginTop:35, marginBottom:35}}>
             <Grid item >
                 <Typography variant="h3" component="h2">
                     HELLO

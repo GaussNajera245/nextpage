@@ -1,4 +1,4 @@
-import React, {div} from 'react';
+import React from 'react';
 import {AssignmentTwoTone, HomeTwoTone, PanToolTwoTone, FingerprintTwoTone, FavoriteTwoTone, ExploreTwoTone} from '@material-ui/icons';
 import HeroHeader from './Header/HeroHeader';
 import Form from './FormPart/Form';
@@ -6,8 +6,9 @@ import Features from './FeaturesPart/Features';
 import Footer from './Footer/Footer'
 import Navbar from './Header/Navbar';
 import app from './app.module.css';
+import { FeaturesType, SectionType, HeroHeaderType } from '../models/types.models'
 
-const sections = [
+const sections: SectionType[] = [
     { title: 'Technology', url: '#' },
     { title: 'Design', url: '#' },
     { title: 'About Us', url: 'about' },
@@ -20,7 +21,7 @@ const sections = [
     { title: 'Travel', url: '#' },
 ];
 
-const allFeatures = [
+const allFeatures: FeaturesType[] = [
     {   title:'Etwas',
         icon: <AssignmentTwoTone style={{marginBottom:-3}} />,
         text:'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto'
@@ -47,7 +48,7 @@ const allFeatures = [
     },
 ];
 
-const mainFeaturedPost = {
+const mainFeaturedPost: HeroHeaderType = {
     title: 'Title of a longer featured blog post',
     description:
       "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
@@ -55,16 +56,16 @@ const mainFeaturedPost = {
     imgText: 'main image description',
     linkText: 'Continue reading…',
   };
-  
 
-const App = () => {
+const App: React.FC = () => {
     return (
         <div className={app.body}>
             <Navbar sections={sections} title={'Blog'}/>
             <HeroHeader post={mainFeaturedPost} />
             <Features features={allFeatures} />
             <Form />  
-            <Footer title="WebApp" description="Page for dummy purpouses" /> 
+            <Footer /> 
+            {/* <Footer title="WebApp" description="Page for dummy purpouses" />  */}
         </div>
     );
 };

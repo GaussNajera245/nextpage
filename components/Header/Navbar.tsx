@@ -1,8 +1,9 @@
 import React from 'react';
 import {Toolbar, Button, IconButton, Link, Typography} from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/SearchTwoTone';
+import { NavbarProps } from '../../models/types.models'; 
 
-const Navbar = props => {
+const Navbar: React.FC<NavbarProps> = props => {
     return (
       <>
         <Toolbar style={{borderBottom: '1px solid #e6e6e6'}}>

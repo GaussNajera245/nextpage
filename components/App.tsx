@@ -9,16 +9,9 @@ import app from './app.module.css';
 import { FeaturesType, SectionType, HeroHeaderType } from '../models/types.models'
 
 const sections: SectionType[] = [
-    { title: 'Technology', url: '#' },
-    { title: 'Design', url: '#' },
-    { title: 'About Us', url: 'about' },
-    { title: 'Business', url: '#' },
-    { title: 'Politics', url: '#' },
-    { title: 'Opinion', url: '#' },
-    { title: 'Science', url: '#' },
-    { title: 'Health', url: '#' },
-    { title: 'Style', url: '#' },
-    { title: 'Travel', url: '#' },
+    { title: 'Our Features', url: '#' },
+    { title: 'About', url: 'about' },
+    { title: 'Contact', url: '#' },
 ];
 
 const allFeatures: FeaturesType[] = [
@@ -52,7 +45,7 @@ const mainFeaturedPost: HeroHeaderType = {
     title: 'Title of a longer featured blog post',
     description:
       "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-    image: 'https://source.unsplash.com/random',
+    image: 'https://i.picsum.photos/id/99/1095/400.jpg',
     imgText: 'main image description',
     linkText: 'Continue reading…',
   };
@@ -61,7 +54,7 @@ const App: React.FC = () => {
     return (
         <div className={app.body}>
             <Navbar sections={sections} title={'Blog'}/>
-            <HeroHeader post={mainFeaturedPost} />
+            <HeroHeader {...mainFeaturedPost} />
             <Features features={allFeatures} />
             <Form />  
             <Footer /> 

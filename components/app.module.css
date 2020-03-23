@@ -1,4 +1,5 @@
 .body { 
     background-color: #fafafa;
+    background-image: linear-gradient(#063958, #fafafa);
     margin: -8px
 }

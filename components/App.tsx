@@ -9,9 +9,9 @@ import app from './app.module.css';
 import { FeaturesType, SectionType, HeroHeaderType } from '../models/types.models'
 
 const sections: SectionType[] = [
-    { title: 'Our Features', url: '#' },
-    { title: 'About', url: 'about' },
-    { title: 'Contact', url: '#' },
+    { title: 'Our Features', url: '/#' },
+    { title: 'About', url: '/about' },
+    { title: 'Contact', url: '/#' },
 ];
 
 const allFeatures: FeaturesType[] = [

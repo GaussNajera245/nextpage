@@ -1,0 +1,25 @@
+.main {
+    position: relative;
+    background-color: #CCCCCC;
+    color: white;
+    margin-bottom: 32px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,.3);
+  }
+
+  .content {
+    position: relative;
+    padding: 24px;
+    color: white
+  }

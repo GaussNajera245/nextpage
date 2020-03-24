@@ -1,6 +1,5 @@
 import React, { CSSProperties } from "react";
 import Grid from '@material-ui/core/Grid';
-import Iframe from 'react-iframe'
 
 const styles:CSSProperties = {
     border: "none",
@@ -8,29 +7,22 @@ const styles:CSSProperties = {
     width: '-webkit-fill-available',
 };
 
+const URI = "https://docs.google.com/forms/d/1dbRjBU4-i-8CvfEG593pTMwqEp29BdH7VWmvPVUoH4c/viewform?embedded=true";
+
 const Form: React.FC = () => {
   return (
-    <Grid container style={{ paddingBottom:10, paddingTop:20 }} alignItems='center' direction="row" justify="center">
-      <Grid item xs={6} >
-        <iframe 
-            src="https://docs.google.com/forms/d/1dbRjBU4-i-8CvfEG593pTMwqEp29BdH7VWmvPVUoH4c/viewform?embedded=true" 
-            style={styles}
-            scrolling="no"
-            ></iframe>
+    <div id="form">
+      <Grid container style={{ paddingBottom:60, paddingTop:20 }} alignItems='center' direction="row" justify="center">
+        <Grid item xs={6} >
+          <iframe 
+              src= {URI} 
+              style={styles}
+              scrolling="no"
+              ></iframe>
+        </Grid>
       </Grid>
-    </Grid>
+    </div>
   );
 };
 
 export default Form;
-
-{/*       
-        <Iframe url="https://docs.google.com/forms/d/1dbRjBU4-i-8CvfEG593pTMwqEp29BdH7VWmvPVUoH4c/viewform?edit_requested=true"
-            width="100%"
-            height="535px"
-            className="myClassname"
-            // display="initial"
-            // position="relative"
-            // frameBorder="0" 
-            scrolling="no"
-            /> */}

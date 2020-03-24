@@ -25,3 +25,9 @@ export interface NavbarProps {
     title: string,
     sections: SectionType[]
 };
+
+export interface DrawerProps {
+    open: boolean,
+    onClosed: () => void,
+    sections: SectionType[]
+};

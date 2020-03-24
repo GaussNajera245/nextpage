@@ -1,5 +1,5 @@
 import React from 'react';
-import {AssignmentTwoTone, HomeTwoTone, PanToolTwoTone, FingerprintTwoTone, FavoriteTwoTone, ExploreTwoTone} from '@material-ui/icons';
+import { AssignmentTwoTone, HomeTwoTone, PanToolTwoTone, FingerprintTwoTone, FavoriteTwoTone, ExploreTwoTone } from '@material-ui/icons';
 import HeroHeader from './Header/HeroHeader';
 import Form from './FormPart/Form';
 import Features from './FeaturesPart/Features';
@@ -7,11 +7,12 @@ import Footer from './Footer/Footer'
 import Navbar from './Header/Navbar';
 import app from './app.module.css';
 import { FeaturesType, SectionType, HeroHeaderType } from '../models/types.models'
+import Head from 'next/head' 
 
 const sections: SectionType[] = [
-    { title: 'Our Features', url: '/#' },
+    { title: 'Our Features', url: '/#features' },
     { title: 'About', url: '/about' },
-    { title: 'Contact', url: '/#' },
+    { title: 'Contact', url: '/#form' },
 ];
 
 const allFeatures: FeaturesType[] = [
@@ -52,14 +53,18 @@ const mainFeaturedPost: HeroHeaderType = {
 
 const App: React.FC = () => {
     return (
-        <div className={app.body}>
-            <Navbar sections={sections} title={'Blog'}/>
-            <HeroHeader {...mainFeaturedPost} />
-            <Features features={allFeatures} />
-            <Form />  
-            <Footer /> 
-            {/* <Footer title="WebApp" description="Page for dummy purpouses" />  */}
-        </div>
+        <>
+            <Head>
+                <link href="https://fonts.googleapis.com/css?family=Caveat:700&display=swap" rel="stylesheet"></link>
+            </Head>
+            <div className={app.body}>
+                <Navbar sections={sections} title={'Blog'}/>
+                <HeroHeader {...mainFeaturedPost} />
+                <Features features={allFeatures} />
+                <Form />  
+                <Footer /> 
+            </div>
+        </>
     );
 };
 export default App;

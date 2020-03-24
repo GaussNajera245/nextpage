@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import { useRouter } from 'next/router'
-import {ListItem, Divider, Hidden, Button, IconButton, Link, Typography, Grid, Drawer, GridListTile, GridListTileBar } from '@material-ui/core';
-import { NavbarProps } from '../../models/types.models'; 
-// import { Menu } from '@material-ui/icons'
+import React, { useState } from 'react';
+import { Divider, Hidden, IconButton, Link, Grid } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu'
+import NavDrawer from './NavDrawer';
+import { NavbarProps } from '../../models/types.models'; 
+import { Logo } from '../Text';
 
 const linkStyle:object = {
   fontSize: '1.2rem',
@@ -15,80 +15,49 @@ const linkStyle:object = {
   flexShrink: 0
 }
 
-const linkStyle2:object = {
-  fontSize: '1rem',
-  color: 'black',
-}
-
-
 const Navbar: React.FC<NavbarProps> = props => {
   const [toggle, setToggleStatus] = useState<boolean>(false);
-  const router = useRouter();
 
-  const openDrawer = ()=>{
-    setToggleStatus(!toggle);
-    console.log();
-  };
-
-  const goToMain = () => router.push('/') ;
-
+  const openDrawer = () => setToggleStatus(!toggle);
 
   return (
       <>
         <Grid container  direction="row" justify="space-between" alignItems="center" style={{ height:'65px' }}>
+          <Hidden smUp implementation="css">
+            <NavDrawer open={toggle} onClosed={openDrawer} sections={props.sections} />
+          </Hidden>
 
-        <Hidden smUp implementation="css">
-          <Drawer open={toggle} onClose={openDrawer} >
-                <img src="/static/otto.png/" alt="logo" height="50px" />
-              {props.sections.map(section => (
-                <React.Fragment key={section.title}>
-                  <ListItem >
-                    <Link 
-                      style={ linkStyle2 }
-                      href={section.url}
-                    >
-                      {section.title}
-                    </Link>
-                  </ListItem>
-                </React.Fragment>
-              ))}
-          </Drawer>
-        </Hidden>
           
-          <Grid item xs={12} sm={2}>  
-            <Grid container>
+          <Grid item xs={12} sm={5}>  
+            <Grid container direction="row" alignItems="center">
               <Grid item xs={1}>
                 <Hidden smUp >
-                  <IconButton onClick={openDrawer}>
-                    <MenuIcon />
+                  <IconButton onClick={openDrawer} style={{marginRight:10}}>
+                    <MenuIcon style={{fill:'white'}} />
                   </IconButton>
                 </Hidden>
               </Grid>
               <Grid item xs={11}>
-                <img src="/static/otto.png/" alt="logo" height="62px" style={{marginLeft: '20px'}} onClick={goToMain}/>
+                 <Logo text='-Logo-' dark/>   
               </Grid>
             </Grid>
           </Grid>
 
-
           <Hidden only="xs">
-            <Grid item >
-              {props.sections.map(section => (
-                <Link
-                color="inherit"
-                noWrap
-                key={section.title}
-                variant="body2"
-                href={section.url}
-                style={linkStyle}
-                >
-                  {section.title}
-                </Link>
-              ))}
+            <Grid item sm={7}>
+              <Grid container direction="row" justify="flex-end" >
+                <Grid item>
+                    {props.sections.map(section => (
+                      <Link key={section.title} variant="body2" href={section.url} style={linkStyle} >
+                        {section.title}
+                      </Link>
+                    ))}
+                </Grid>
+              </Grid>
             </Grid>
           </Hidden>
         </Grid>
-        <Divider style={{border: '1px solid white'}}/>
+        <Divider style={{height: '1px', color: 'white',  backgroundColor: 'white',  border: 'none'}}/>
       </>
     );
   };

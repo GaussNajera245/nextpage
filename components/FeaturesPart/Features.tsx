@@ -1,23 +1,28 @@
 import React from 'react';
 import FeatureList from './FeatureList';
-import {Grid, Typography} from '@material-ui/core';
+import { Grid, Paper } from '@material-ui/core';
 import { FeatureListProps } from '../../models/types.models'
+import { Title3, Title4 } from '../Text';
 
 const Features: React.FC<FeatureListProps> = props => {
     return(
-        <Grid container direction="column" alignItems="center" style={{marginTop:35, marginBottom:35}}>
-            <Grid item xs={10}>
-                <Typography variant="h3" component="h2">
-                    HELLO
-                </Typography> 
+        <div id="features">
+            <Grid container direction="column" alignItems="center">
+                <Grid item>
+                    <Paper style={{margin:40, padding:35, paddingTop:50, background: 'rgba(254, 254, 254, 0.5)'}}> 
+                        <Grid container>
+                            <Grid item xs={12}>
+                                <Title3 text='Services' />
+                            </Grid>
+                            <Grid item xs={12} style={{paddingTop:15, paddingBottom:20}}>
+                                <Title4 text='dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi'/>
+                            </Grid>
+                            <FeatureList features={props.features}  />
+                        </Grid>
+                    </Paper>
+                </Grid>
             </Grid>
-            <Grid item xs={10} style={{paddingTop:15, paddingBottom:20}}>
-                <Typography variant="h5" component="p">
-                dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi
-                </Typography> 
-            </Grid>
-            <FeatureList features={props.features}  />
-        </Grid>
+        </div>
     );
 };
 
